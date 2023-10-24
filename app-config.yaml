@@ -1,0 +1,66 @@
+app:
+  title: Backstage Playground
+  baseUrl: http://localhost:3000
+
+organization:
+  name: Backstage Playground
+
+backend:
+  baseUrl: http://localhost:7007
+  listen:
+    port: 7007
+  csp:
+    # Content-Security-Policy directives follow the Helmet format: https://helmetjs.github.io/#reference
+    # Default Helmet Content-Security-Policy values can be removed by setting the key to false
+    connect-src: ["'self'", 'http:', 'https:']
+  cors:
+    origin: http://localhost:3000
+    methods: [GET, HEAD, PATCH, POST, PUT, DELETE]
+    credentials: true
+  # If you want to use Postgres see https://backstage.io/docs/tutorials/switching-sqlite-postgres/
+  database:
+    client: better-sqlite3
+    connection: ':memory:'
+
+# See http://backstage.io/docs/features/techdocs/configuration
+techdocs:
+  builder: 'local'
+  generator:
+    runIn: 'local'
+  publisher:
+    type: 'local'
+
+# See https://backstage.io/docs/auth/
+auth:
+  providers: {}
+
+# See https://backstage.io/docs/features/software-templates/configuration
+scaffolder: {}
+
+# Add integrations to read from GitHub or GitLab
+# See https://backstage.io/docs/integrations/
+
+# See https://backstage.io/docs/features/software-catalog/configuration/
+catalog:
+  import:
+    entityFilename: catalog-info.yaml
+  locations:
+    - type: file
+      target: ../../examples/backstage.yaml
+
+    # Local example data, file locations are relative to the backend process, typically `packages/backend`
+    - type: file
+      target: ../../examples/entities.yaml
+
+    # Local example template
+    - type: file
+      target: ../../examples/template/template.yaml
+      rules:
+        - allow: [Template]
+
+    # Local example organizational data
+    - type: file
+      target: ../../examples/org.yaml
+      rules:
+        - allow: [User, Group]
+  # Add providers here if you want to read from GitHub or GitLab
