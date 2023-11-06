@@ -26,6 +26,7 @@ import {
 } from '@backstage/core-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
+import NotificationsIcon from '@material-ui/icons/Notifications';
 
 const useSidebarLogoStyles = makeStyles({
   root: {
@@ -77,6 +78,11 @@ export const Root = ({ children }: PropsWithChildren<{}>) => (
       </SidebarGroup>
       <SidebarSpace />
       <SidebarDivider />
+      <SidebarItem
+        icon={NotificationsIcon}
+        to="notifications"
+        text="Notifications"
+      />
       <SidebarGroup
         label="Settings"
         icon={<UserSettingsSignInAvatar />}

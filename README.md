@@ -101,12 +101,43 @@ metadata:
     argocd/app-selector: <app-selector>
 ```
 
+#### Notifications
+
+The local notifications plugin allows you to send and display notifications/messages in the Backstage playground
+instance.
+
+**Configuration**
+
+You don't need any changes in the Backstage configuration. Notifications are enabled and shown in the menu by default.
+
+**Usage**
+
+- To create a notification, send a `POST` request to `<your-backend-url>/api/notifications` with this payload:
+
+```
+{
+  "message": "Your notification", # The text of your notifications
+  "channel": "team-1", # The channel to send the notification to. Don't use whitespaces.'
+  "origin": "sender" # Where the notification is coming from
+}
+```
+
+- After sending a notification you should see it in the Backstage UI when navigating to "Notifications" in the menu.
+
+Add either the `argocd/app-name` or `argocd/app-selector` annotation to your `catalog-info.yaml`.
+
+```yaml
+metadata:
+  annotations:
+    argocd/app-name: <your-app-name>
+    argocd/app-selector: <app-selector>
+```
+
 ## Next Steps
 
 Next, I would configure the below things:
 
 - The container image is way to big -> use a multi-stage build
-- A custom plugin that shows messages that are coming in via a Webhook (unfortunately, I couldn't find an existing one)
 - A [custom home page](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) that shows some intro
   text and links to the catalog and the scaffolder
 - [GitLab plugin](https://github.com/immobiliare/backstage-plugin-gitlab)

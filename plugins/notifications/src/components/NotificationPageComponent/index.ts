@@ -1,0 +1,1 @@
+export { NotificationPageComponent } from './NotificationPageComponent';
