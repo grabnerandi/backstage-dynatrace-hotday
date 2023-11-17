@@ -56,7 +56,7 @@ jobs:
         run: yarn tsc
 
       - name: yarn build
-        run: yarn build:backend
+        run: yarn build:all
 
       - name: Log in to the Container registry
         uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
