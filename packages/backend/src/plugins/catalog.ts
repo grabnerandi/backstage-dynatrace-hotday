@@ -14,7 +14,7 @@ export default async function createPlugin(
 
   // GitLab provider
   builder.addEntityProvider(
-    ...GitlabDiscoveryEntityProvider.fromConfig(env.config, {
+    GitlabDiscoveryEntityProvider.fromConfig(env.config, {
       logger: env.logger,
       scheduler: env.scheduler,
     }),
