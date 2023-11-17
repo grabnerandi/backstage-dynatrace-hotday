@@ -124,15 +124,6 @@ You don't need any changes in the Backstage configuration. Notifications are ena
 
 - After sending a notification you should see it in the Backstage UI when navigating to "Notifications" in the menu.
 
-Add either the `argocd/app-name` or `argocd/app-selector` annotation to your `catalog-info.yaml`.
-
-```yaml
-metadata:
-  annotations:
-    argocd/app-name: <your-app-name>
-    argocd/app-selector: <app-selector>
-```
-
 ## Next Steps
 
 Next, I would configure the below things:
