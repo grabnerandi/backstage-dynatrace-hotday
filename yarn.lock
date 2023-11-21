@@ -7168,6 +7168,21 @@
     lodash "^4.17.21"
     lodash-es "^4.17.21"
 
+"@roadiehq/backstage-plugin-argo-cd-backend@^2.11.4":
+  version "2.11.4"
+  resolved "https://registry.yarnpkg.com/@roadiehq/backstage-plugin-argo-cd-backend/-/backstage-plugin-argo-cd-backend-2.11.4.tgz#f77d72e37c7dcfcce52dda55f1974d0f89e0b210"
+  integrity sha512-cvuhUGPkYH4FNUB3ZBNHpK8ZHqTiPMOXMAaIlYRlwKxxCMeMqiMFKFluak+Q2Moe7WLVkUzqK51xG/mybmqSbw==
+  dependencies:
+    "@backstage/backend-common" "^0.19.8"
+    "@backstage/catalog-client" "^1.4.5"
+    "@backstage/config" "^1.1.1"
+    "@types/express" "^4.17.6"
+    cross-fetch "^3.1.4"
+    express "^4.17.1"
+    express-promise-router "^4.1.0"
+    winston "^3.2.1"
+    yn "^4.0.0"
+
 "@roadiehq/backstage-plugin-argo-cd@^2.3.4":
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/@roadiehq/backstage-plugin-argo-cd/-/backstage-plugin-argo-cd-2.3.4.tgz#679cc7334ae67258bbb315303d0a8db806289312"
@@ -9028,7 +9043,7 @@
   resolved "https://registry.yarnpkg.com/@types/range-parser/-/range-parser-1.2.5.tgz#38bd1733ae299620771bd414837ade2e57757498"
   integrity sha512-xrO9OoVPqFuYyR/loIHjnbvvyRZREYKLjxV4+dY6v3FQR3stQ9ZxIGkaclF7YhI9hfjpuTbu14hZEy94qKLtOA==
 
-"@types/react-dom@*", "@types/react-dom@<18.0.0", "@types/react-dom@^17":
+"@types/react-dom@*", "@types/react-dom@<18.0.0":
   version "17.0.22"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-17.0.22.tgz#34317e08be27b33fa9e7cdb56125b22538261bad"
   integrity sha512-wHt4gkdSMb4jPp1vc30MLJxoWGsZs88URfmt3FRXoOEYrrqK3I8IuZLE/uFBb4UT6MRfI0wXFu4DS7LS0kUC7Q==

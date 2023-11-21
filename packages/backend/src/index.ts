@@ -30,6 +30,7 @@ import techdocs from './plugins/techdocs';
 import search from './plugins/search';
 import kubernetes from './plugins/kubernetes';
 import notifications from './plugins/notifications';
+import argocd from './plugins/argocd';
 import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
@@ -91,6 +92,7 @@ async function main() {
   const notificationsEnv = useHotMemoize(module, () =>
     createEnv('notifications'),
   );
+  const argocdEnv = useHotMemoize(module, () => createEnv('argocd'));
 
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
@@ -101,6 +103,7 @@ async function main() {
   apiRouter.use('/search', await search(searchEnv));
   apiRouter.use('/kubernetes', await kubernetes(kubernetesEnv));
   apiRouter.use('/notifications', await notifications(notificationsEnv));
+  apiRouter.use('/argocd', await argocd(argocdEnv));
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());

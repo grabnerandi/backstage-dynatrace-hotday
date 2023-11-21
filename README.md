@@ -85,10 +85,8 @@ The [ArgoCD plugin](https://roadie.io/backstage/plugins/argo-cd/) shows informat
 
 **Configuration**
 
-- Configure your ArgoCD host at `proxy` in the [Backstage configuration](./deployment/config.yaml).
+- Configure your ArgoCD host & instance name at `argocd` in the [Backstage configuration](./deployment/config.yaml).
 - Set your ArgoCD token in the [Backstage secret](./deployment/secrets.yaml)
-
-> This instance is configured to support only one ArgoCD instance but the plugin would also support multiple instances.
 
 **Usage**
 
