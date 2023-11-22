@@ -61,7 +61,10 @@ the [official documentation](https://backstage.io/docs/features/software-templat
 
 #### TechDocs
 
-TODO
+The [TechDocs](https://backstage.io/docs/features/techdocs/getting-started/) plugin is configured to build, store and
+read documentation locally. This means adding documentation should work out of the box.
+See [the official docs](https://backstage.io/docs/features/techdocs/creating-and-publishing) for more information on how
+to create documentation.
 
 #### Kubernetes
 
