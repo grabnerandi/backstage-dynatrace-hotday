@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Grid } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Button, Grid } from '@material-ui/core';
 import {
   Progress,
   ResponseErrorPanel,
@@ -8,21 +8,43 @@ import {
   TableColumn,
 } from '@backstage/core-components';
 import { notificationsApiRef } from '../../api';
-import { useAsync } from 'react-use';
 import { configApiRef, useApi } from '@backstage/core-plugin-api';
+import { Refresh } from '@material-ui/icons';
+import { Notification } from '../../api/types';
+import { marked } from 'marked';
+import DOMPurify from 'dompurify';
 
 export const NotificationListComponent = () => {
-  const [selectedChannel, setSelectedChannel] = useState('');
+  const allChannelsKey = 'all-channels';
+  const [selectedChannel, setSelectedChannel] = useState(allChannelsKey);
   const config = useApi(configApiRef);
   const notificationsApi = useApi(notificationsApiRef);
-  const { value, loading, error } = useAsync(
-    async () => notificationsApi.getNotifications(),
-    [],
-  );
+  const [notifications, setNotifications] = useState<Notification[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<Error | null>(null);
+
+  const loadData = () => {
+    setError(null);
+    setLoading(true);
+    notificationsApi
+      .getNotifications()
+      .then(result => {
+        setLoading(false);
+        setNotifications(result);
+      })
+      .catch(error => {
+        setLoading(false);
+        setError(error);
+      });
+  };
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   if (loading) {
     return <Progress />;
-  } else if (error || !value) {
+  } else if (error || !notifications) {
     return <ResponseErrorPanel error={error ?? new Error('No data found')} />;
   }
 
@@ -33,13 +55,26 @@ export const NotificationListComponent = () => {
       type: 'string',
       render: (row: any, _) => new Date(row['timestamp']).toLocaleString(),
     },
-    { title: 'Message', field: 'message' },
+    {
+      title: 'Message',
+      field: 'message',
+      type: 'string',
+      render: (row: any, _) => {
+        let html = DOMPurify.sanitize(marked.parse(row['message']) as string);
+        // ugly fix to add link highlighting
+        html = html.replaceAll(
+          '<a',
+          '<a style="text-decoration: underline; color: blue"',
+        );
+        return <div dangerouslySetInnerHTML={{ __html: html }} />;
+      },
+    },
     { title: 'Channel', field: 'channel' },
     { title: 'Origin', field: 'origin' },
   ];
 
   const channels: string[] = [];
-  value.forEach(notification => {
+  notifications.forEach(notification => {
     if (!channels.includes(notification.channel)) {
       channels.push(notification.channel);
     }
@@ -49,16 +84,28 @@ export const NotificationListComponent = () => {
       <Grid item xs={2}>
         <Select
           label="Channel"
-          items={channels.map(c => ({ label: c, value: c }))}
+          items={[
+            { label: 'All Channels', value: allChannelsKey },
+            ...channels.map(c => ({
+              label: c,
+              value: c,
+            })),
+          ]}
           selected={selectedChannel.toLocaleLowerCase('en-US')}
           onChange={value => setSelectedChannel(String(value))}
         />
+        <Button style={{ width: '100%' }} onClick={() => loadData()}>
+          <Refresh />
+        </Button>
       </Grid>
       <Grid item xs={10}>
         <Table
           options={{ paging: false, sorting: true }}
-          data={value.filter(
-            v => !selectedChannel || v.channel === selectedChannel,
+          data={notifications.filter(
+            v =>
+              !selectedChannel ||
+              selectedChannel === allChannelsKey ||
+              v.channel === selectedChannel,
           )}
           columns={columns}
           title="Notifications"
