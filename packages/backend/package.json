@@ -48,7 +48,8 @@
     "express-promise-router": "^4.1.0",
     "pg": "^8.3.0",
     "prom-client": "^15.1.0",
-    "winston": "^3.2.1"
+    "winston": "^3.2.1",
+    "@dynatrace/backstage-plugin-dql-backend": "0.1.0-alpha.1"
   },
   "devDependencies": {
     "@backstage/cli": "^0.24.0",

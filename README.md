@@ -125,18 +125,15 @@ You don't need any changes in the Backstage configuration. Notifications are ena
 
 - After sending a notification you should see it in the Backstage UI when navigating to "Notifications" in the menu.
 
-## Next Steps
+#### Dynatrace
 
-Next, I would configure the below things:
+The [Dynatrace plugin](https://github.com/Dynatrace/backstage-plugin) fetches information from Dynatrace.
 
-- The container image is way to big -> use a multi-stage build
-- A [custom home page](https://github.com/backstage/backstage/blob/master/plugins/home/README.md) that shows some intro
-  text and links to the catalog and the scaffolder
-- [GitLab plugin](https://github.com/immobiliare/backstage-plugin-gitlab)
-- [Dynatrace plugin](https://github.com/backstage/backstage/tree/master/plugins/dynatrace)
-- [Badges](https://github.com/backstage/backstage/blob/master/plugins/badges/README.md) are a small fun addition
-- [TODO](https://github.com/backstage/backstage/tree/master/plugins/todo) shows all TODO comments from the source code
-- [Tech Insights](https://roadie.io/backstage/plugins/tech-insights/) lets you display the quality of an entity in the
-  UI
-- [Shortcuts](https://github.com/backstage/backstage/blob/master/plugins/shortcuts/README.md) let's the user set
-  shortcuts to certain pages
+**Configuration**
+
+- Configure your Dynatrace tenant at `dynatrace` in the [Backstage configuration](./deployment/config.yaml).
+- Set `DYNATRACE_ACCOUNT_URN`, `DYNATRACE_CLIENT_ID` and `DYNATRACE_CLIENT_SECRET` in the [Backstage secret](./deployment/secrets.yaml)
+
+**Usage**
+
+See [docs](https://github.com/Dynatrace/backstage-plugin?tab=readme-ov-file#getting-started)

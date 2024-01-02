@@ -31,6 +31,7 @@ import search from './plugins/search';
 import kubernetes from './plugins/kubernetes';
 import notifications from './plugins/notifications';
 import argocd from './plugins/argocd';
+import dynatrace from './plugins/dynatrace';
 import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
@@ -94,6 +95,7 @@ async function main() {
     createEnv('notifications'),
   );
   const argocdEnv = useHotMemoize(module, () => createEnv('argocd'));
+  const dynatraceEnv = useHotMemoize(module, () => createEnv('dynatrace-dql'));
 
   const apiRouter = Router();
   apiRouter.use('/catalog', await catalog(catalogEnv));
@@ -105,6 +107,7 @@ async function main() {
   apiRouter.use('/kubernetes', await kubernetes(kubernetesEnv));
   apiRouter.use('/notifications', await notifications(notificationsEnv));
   apiRouter.use('/argocd', await argocd(argocdEnv));
+  apiRouter.use('/dynatrace-dql', await dynatrace(dynatraceEnv));
 
   // Add backends ABOVE this line; this 404 handler is the catch-all fallback
   apiRouter.use(notFoundHandler());

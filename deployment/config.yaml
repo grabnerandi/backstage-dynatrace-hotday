@@ -95,3 +95,13 @@ data:
       clusterLocatorMethods:
         - type: config
           clusters: []
+          
+    # See https://github.com/Dynatrace/backstage-plugin?tab=readme-ov-file#getting-started
+    dynatrace:
+      environments:
+        - name: xxx
+          url: https://xxx.sprint.apps.dynatracelabs.com
+          tokenUrl: https://sso-sprint.dynatracelabs.com/sso/oauth2/token
+          accountUrn: ${DYNATRACE_ACCOUNT_URN}
+          clientId: ${DYNATRACE_CLIENT_ID}
+          clientSecret: ${DYNATRACE_CLIENT_SECRET}
