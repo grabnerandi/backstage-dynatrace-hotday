@@ -34,6 +34,7 @@ import argocd from './plugins/argocd';
 import { PluginEnvironment } from './types';
 import { ServerPermissionClient } from '@backstage/plugin-permission-node';
 import { DefaultIdentityClient } from '@backstage/plugin-auth-node';
+import { metricsHandler } from './metrics';
 
 function makeCreateEnv(config: Config) {
   const root = getRootLogger();
@@ -111,7 +112,8 @@ async function main() {
   const service = createServiceBuilder(module)
     .loadConfig(config)
     .addRouter('/api', apiRouter)
-    .addRouter('', await app(appEnv));
+    .addRouter('', await app(appEnv))
+    .addRouter('', metricsHandler());
 
   await service.start().catch(err => {
     console.log(err);
