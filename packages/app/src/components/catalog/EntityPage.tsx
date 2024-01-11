@@ -18,21 +18,21 @@ import {
   EntityHasSystemsCard,
   EntityLayout,
   EntityLinksCard,
-  EntitySwitch,
   EntityOrphanWarning,
   EntityProcessingErrorsPanel,
+  EntityRelationWarning,
+  EntitySwitch,
+  hasCatalogProcessingErrors,
+  hasRelationWarnings,
   isComponentType,
   isKind,
-  hasCatalogProcessingErrors,
   isOrphan,
-  hasRelationWarnings,
-  EntityRelationWarning,
 } from '@backstage/plugin-catalog';
 import {
-  EntityUserProfileCard,
   EntityGroupProfileCard,
   EntityMembersListCard,
   EntityOwnershipCard,
+  EntityUserProfileCard,
 } from '@backstage/plugin-org';
 import { EntityTechdocsContent } from '@backstage/plugin-techdocs';
 import { EmptyState } from '@backstage/core-components';
@@ -58,6 +58,10 @@ import {
   EntityArgoCDHistoryCard,
   isArgocdAvailable,
 } from '@roadiehq/backstage-plugin-argo-cd';
+import {
+  EntityDqlQueryCard,
+  EntityKubernetesDeploymentsCard,
+} from '@dynatrace/backstage-plugin-dql';
 
 const techdocsContent = (
   <EntityTechdocsContent>
@@ -132,6 +136,13 @@ const overviewContent = (
 
     <Grid item md={4} xs={12}>
       <EntityLinksCard />
+    </Grid>
+
+    <Grid item md={8} xs={12}>
+      <EntityDqlQueryCard queryId="custom.events" title="Dynatrace Events" />
+    </Grid>
+    <Grid item md={12} xs={12}>
+      <EntityKubernetesDeploymentsCard />
     </Grid>
     <Grid item md={8} xs={12}>
       <EntityHasSubcomponentsCard variant="gridItem" />
