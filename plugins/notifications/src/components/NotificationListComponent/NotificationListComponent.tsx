@@ -64,7 +64,7 @@ export const NotificationListComponent = () => {
         // ugly fix to add link highlighting
         html = html.replaceAll(
           '<a',
-          '<a style="text-decoration: underline; color: blue"',
+          '<a target="_blank" style="text-decoration: underline; color: blue"',
         );
         return <div dangerouslySetInnerHTML={{ __html: html }} />;
       },
