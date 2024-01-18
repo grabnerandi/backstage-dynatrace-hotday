@@ -1,4 +1,4 @@
-FROM node:18-bookworm-slim
+FROM node:20-bookworm-slim
 
 ARG npm_token
 ENV NPM_TOKEN "${npm_token}"

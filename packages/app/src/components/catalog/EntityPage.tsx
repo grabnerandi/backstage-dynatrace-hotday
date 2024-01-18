@@ -14,7 +14,6 @@ import {
   EntityDependsOnResourcesCard,
   EntityHasComponentsCard,
   EntityHasResourcesCard,
-  EntityHasSubcomponentsCard,
   EntityHasSystemsCard,
   EntityLayout,
   EntityLinksCard,
@@ -130,22 +129,27 @@ const overviewContent = (
     <Grid item md={6}>
       <EntityAboutCard variant="gridItem" />
     </Grid>
-    <Grid item md={6} xs={12}>
+
+    <Grid item md={6}>
       <EntityCatalogGraphCard variant="gridItem" height={400} />
     </Grid>
-
-    <Grid item md={4} xs={12}>
+    <Grid item md={12}>
       <EntityLinksCard />
     </Grid>
 
-    <Grid item md={8} xs={12}>
-      <EntityDqlQueryCard queryId="custom.events" title="Dynatrace Events" />
+    <Grid item md={12}>
+      {/* @ts-ignore */}
+      <EntityKubernetesDeploymentsCard pageSize={5} />
     </Grid>
-    <Grid item md={12} xs={12}>
-      <EntityKubernetesDeploymentsCard />
+
+    <Grid item md={6}>
+      {/* @ts-ignore */}
+      <EntityDqlQueryCard queryId="custom.logs" title="Dynatrace Logs" pageSize={5} />
     </Grid>
-    <Grid item md={8} xs={12}>
-      <EntityHasSubcomponentsCard variant="gridItem" />
+
+    <Grid item md={6}>
+      {/* @ts-ignore */}
+      <EntityDqlQueryCard queryId="custom.validations" title="Dynatrace Validations" pageSize={5} />
     </Grid>
   </Grid>
 );
