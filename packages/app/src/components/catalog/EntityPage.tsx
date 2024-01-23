@@ -138,17 +138,14 @@ const overviewContent = (
     </Grid>
 
     <Grid item md={12}>
-      {/* @ts-ignore */}
-      <EntityKubernetesDeploymentsCard pageSize={5} />
+      <EntityKubernetesDeploymentsCard pageSize={3} />
     </Grid>
 
     <Grid item md={6}>
-      {/* @ts-ignore */}
       <EntityDqlQueryCard queryId="custom.logs" title="Dynatrace Logs" pageSize={5} />
     </Grid>
 
     <Grid item md={6}>
-      {/* @ts-ignore */}
       <EntityDqlQueryCard queryId="custom.validations" title="Dynatrace Validations" pageSize={5} />
     </Grid>
   </Grid>

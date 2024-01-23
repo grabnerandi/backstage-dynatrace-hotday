@@ -4059,14 +4059,14 @@
     pkginfo "^0.4.1"
     uid2 "^1.0.0"
 
-"@dynatrace/backstage-plugin-dql-backend@0.1.0-alpha.1":
-  version "0.1.0-alpha.1"
-  resolved "https://npm.pkg.github.com/download/@dynatrace/backstage-plugin-dql-backend/0.1.0-alpha.1/09697ac9def02498f5127b610b401675bf9f59eb#09697ac9def02498f5127b610b401675bf9f59eb"
-  integrity sha512-dlBinLKX0czDygylRPpjzxENzlPp2tJmtTXT6J3fx1imitWWgA7mgymYSs9GaERXaMJqSinqLkLl2Ln5R0H6JQ==
+"@dynatrace/backstage-plugin-dql-backend@0.1.1":
+  version "0.1.1"
+  resolved "https://npm.pkg.github.com/download/@dynatrace/backstage-plugin-dql-backend/0.1.1/dae13e71c614e6d0aa349b3b7b299d16c4d4c3d5#dae13e71c614e6d0aa349b3b7b299d16c4d4c3d5"
+  integrity sha512-pdgedEIEIrankBjdxPGtzR087PGpvby7ixvbqyX/l+X376kBXH6dvqF65i7gKBGzgbphy7uxEqtd11miJBakVg==
   dependencies:
     "@backstage/backend-common" "^0.19.5"
     "@backstage/config" "^1.1.0"
-    "@dynatrace/backstage-plugin-dql-common" "^0.1.0-alpha.1"
+    "@dynatrace/backstage-plugin-dql-common" "^0.1.1"
     "@types/express" "*"
     express "^4.17.1"
     express-promise-router "^4.1.0"
@@ -4075,25 +4075,26 @@
     yn "^4.0.0"
     zod "^3.22.4"
 
-"@dynatrace/backstage-plugin-dql-common@^0.1.0-alpha.1":
-  version "0.1.0-alpha.1"
-  resolved "https://npm.pkg.github.com/download/@dynatrace/backstage-plugin-dql-common/0.1.0-alpha.1/97053cea387fcc87d471c90b6dcc1219cebcfdaf#97053cea387fcc87d471c90b6dcc1219cebcfdaf"
-  integrity sha512-vVZH6xADwYfGH385q5XUnGorUXvng69/twdR9o9H1eaEF1dm4AOhlqENUk6Dma9FIDXeZeLgYEKNyeBcKMpO3Q==
+"@dynatrace/backstage-plugin-dql-common@^0.1.1":
+  version "0.1.1"
+  resolved "https://npm.pkg.github.com/download/@dynatrace/backstage-plugin-dql-common/0.1.1/0e58b771222561596c289047422c5e239a7328e9#0e58b771222561596c289047422c5e239a7328e9"
+  integrity sha512-W3dsVv0Hy2fe46st6CqcV6XrbUXj4G9NJ0zdU597mBhdj2jEfbNNwPCcturSlPtU7MVFXIePfxHBy80oKUy98A==
   dependencies:
     lodash "^4.17.21"
     zod "^3.22.4"
 
-"@dynatrace/backstage-plugin-dql@0.1.0-alpha.1":
-  version "0.1.0-alpha.1"
-  resolved "https://npm.pkg.github.com/download/@dynatrace/backstage-plugin-dql/0.1.0-alpha.1/c85d93de9705450c49fcb088e7043f3339f13b31#c85d93de9705450c49fcb088e7043f3339f13b31"
-  integrity sha512-eXv3jpLH6+hcwkeEFnqCQA5b4UBkXKbFPDDCAX6QjqLtg1WZrZsToMnU0f7DHXfL3OYyIm9OsG8AZvswiE3b2Q==
+"@dynatrace/backstage-plugin-dql@0.1.1":
+  version "0.1.1"
+  resolved "https://npm.pkg.github.com/download/@dynatrace/backstage-plugin-dql/0.1.1/1de23b8254f02c002616a8d56e9ae7943ed03183#1de23b8254f02c002616a8d56e9ae7943ed03183"
+  integrity sha512-11w2dHRgF0++BqMGtZKttPsTY1EgQhfYwG8f6RkgoIRWzB1QBmpSlkQSreiSJUfQRzdOWHPjECqIZolvH0miYw==
   dependencies:
     "@backstage/catalog-model" "^1.4.3"
     "@backstage/core-components" "^0.13.5"
     "@backstage/core-plugin-api" "^1.6.0"
+    "@backstage/errors" "^1.2.3"
     "@backstage/plugin-catalog-react" "^1.8.5"
     "@backstage/theme" "^0.4.2"
-    "@dynatrace/backstage-plugin-dql-common" "^0.1.0-alpha.1"
+    "@dynatrace/backstage-plugin-dql-common" "^0.1.1"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
     "@material-ui/lab" "4.0.0-alpha.61"
@@ -10622,7 +10623,7 @@ anymatch@^3.0.3, anymatch@~3.1.2:
     "@backstage/plugin-techdocs-react" "^1.1.15"
     "@backstage/plugin-user-settings" "^0.8.0"
     "@backstage/theme" "^0.5.0"
-    "@dynatrace/backstage-plugin-dql" "0.1.0-alpha.1"
+    "@dynatrace/backstage-plugin-dql" "0.1.1"
     "@internal/plugin-notifications" "^0.1.0"
     "@material-ui/core" "^4.12.2"
     "@material-ui/icons" "^4.9.1"
