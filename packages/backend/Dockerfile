@@ -13,7 +13,7 @@
 # https://backstage.io/docs/deployment/docker#multi-stage-build
 
 # Wee need version 18 because of https://github.com/backstage/backstage/issues/22419
-FROM node:18-bookworm-slim
+FROM node:24-bookworm-slim
 
 # Set Python interpreter for `node-gyp` to use
 ENV PYTHON=/usr/bin/python3
