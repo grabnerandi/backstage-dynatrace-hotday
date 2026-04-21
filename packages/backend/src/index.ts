@@ -65,7 +65,7 @@ backend.add(import('@backstage/plugin-kubernetes-backend'));
 
 // argocd
 // See https://github.com/RoadieHQ/roadie-backstage-plugins/tree/main/plugins/backend/backstage-plugin-argo-cd-backend
-backend.add(import('@roadiehq/backstage-plugin-argo-cd-backend/alpha'));
+backend.add(import('@roadiehq/backstage-plugin-argo-cd-backend'));
 
 // dynatrace
 // See https://github.com/Dynatrace/backstage-plugin
