@@ -4780,13 +4780,13 @@ __metadata:
   linkType: hard
 
 "@codemirror/search@npm:^6.0.0":
-  version: 6.6.0
-  resolution: "@codemirror/search@npm:6.6.0"
+  version: 6.7.0
+  resolution: "@codemirror/search@npm:6.7.0"
   dependencies:
     "@codemirror/state": "npm:^6.0.0"
     "@codemirror/view": "npm:^6.37.0"
     crelt: "npm:^1.0.5"
-  checksum: 10c0/dacb6dbf94dbc4513b681ea2ea215b5771b478bc940c88e52976b7981dc135b3f17cfcb1e3e929579078f334b42e91bdfee89b9ec874638ddaf82f87cefa0de2
+  checksum: 10c0/eaf34f62d37e89d6df89be4a7728e9533e7995eb38bd65deb1db8661afb5be4db02fa334110726ae5a02cc5e7b3ff9692223651fa293dff122af76d624130231
   languageName: node
   linkType: hard
 
@@ -14138,7 +14138,7 @@ __metadata:
 
 "app@file:../app::locator=backend%40workspace%3Apackages%2Fbackend":
   version: 0.0.0
-  resolution: "app@file:../app#../app::hash=9a8fd4&locator=backend%40workspace%3Apackages%2Fbackend"
+  resolution: "app@file:../app#../app::hash=e117f0&locator=backend%40workspace%3Apackages%2Fbackend"
   dependencies:
     "@backstage/app-defaults": "npm:^1.7.4"
     "@backstage/catalog-model": "npm:^1.7.6"
@@ -14174,7 +14174,7 @@ __metadata:
     react-dom: "npm:^18.0.2"
     react-router: "npm:^6.3.0"
     react-router-dom: "npm:^6.3.0"
-  checksum: 10c0/072c5d91970804cd2aa0d63c40acac8b5ede0f904ddb53e962fe75d38f39d851bb445741e853fc231ee43716ed5ff971b5c63cc31c2fe0391087f9c480ddae54
+  checksum: 10c0/c6efb5502692d3b5e5aeec7e6ea152267f9ea35e243942263873699e4e68f13121cba73ff65ee365927d7af41e6abc6d12f863a845b701d55a5047d940e317c8
   languageName: node
   linkType: hard
 
@@ -30610,9 +30610,9 @@ __metadata:
   linkType: hard
 
 "tapable@npm:^2.0.0":
-  version: 2.3.2
-  resolution: "tapable@npm:2.3.2"
-  checksum: 10c0/45ec8bd8963907f35bba875f9b3e9a5afa5ba11a9a4e4a2d7b2313d983cb2741386fd7dd3e54b13055b2be942971aac369d197e02263ec9216c59c0a8069ed7f
+  version: 2.3.3
+  resolution: "tapable@npm:2.3.3"
+  checksum: 10c0/47992e861053f861154e92fb4a98ac4ab47b6463717e60792dd1e8c755da0c4964cd8bb68c308a9066d6da89000b6310457b4d5d985c30de4ccc29066068cc17
   languageName: node
   linkType: hard
 
