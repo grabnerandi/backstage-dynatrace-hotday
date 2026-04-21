@@ -28,7 +28,7 @@ jobs:
         uses: actions/setup-node@v3
       - name: Build   # --frozen-lockfile
         run: |
-          yarn install --immutable=false
+          yarn install --no-frozen-lockfile
           yarn tsc
           yarn build:all
       - name: Build Image & Release
