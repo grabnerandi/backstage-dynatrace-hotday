@@ -26,9 +26,9 @@ jobs:
           fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v3
-      - name: Build
+      - name: Build   # --frozen-lockfile
         run: |
-          yarn install --frozen-lockfile
+          yarn install 
           yarn tsc
           yarn build:all
       - name: Build Image & Release

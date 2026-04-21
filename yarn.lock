@@ -16834,7 +16834,7 @@ __metadata:
 
 "app@file:../app::locator=backend%40workspace%3Apackages%2Fbackend":
   version: 0.0.0
-  resolution: "app@file:../app#../app::hash=4f03ab&locator=backend%40workspace%3Apackages%2Fbackend"
+  resolution: "app@file:../app#../app::hash=595b15&locator=backend%40workspace%3Apackages%2Fbackend"
   dependencies:
     "@backstage/app-defaults": "npm:^1.6.0"
     "@backstage/canon": "npm:^0.2.0"
@@ -16870,7 +16870,7 @@ __metadata:
     react-dom: "npm:^18.0.2"
     react-router: "npm:^6.3.0"
     react-router-dom: "npm:^6.3.0"
-  checksum: 10c0/8dd1bcf44a39086523696074d19c52b83916483940046b3f2b7665458c11986e048eb0687139de9464798afa6db1bee807e656691e5fc32b885ed3dd8edb8bf4
+  checksum: 10c0/e726fb3c7aa40203e3cd000bb68c1caba0e69fdee84123dad1037b7a96b5aabb5dd7cde54a0d69f9bf7787524c6728324f120d9ff8e8e317b1404124cf243249
   languageName: node
   linkType: hard
 
