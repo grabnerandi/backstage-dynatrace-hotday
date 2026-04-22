@@ -5,7 +5,11 @@
 #
 # yarn install --immutable
 # yarn tsc
-# yarn build:backend
+# yarn build:all
+#
+# NOTE: yarn build:all is required (not yarn build:backend) because the app-backend
+# plugin serves the compiled frontend from node_modules/app/dist/static. The frontend
+# must be built first so it is included in the backend bundle.
 #
 # Once the commands have been run, you can build the image using `yarn build-image`
 #
