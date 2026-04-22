@@ -8,7 +8,7 @@
       "@semantic-release-plus/docker",
       {
         "registry": "ghcr.io",
-        "name": "grabnerandi/backstage-playground"
+        "name": "katharinasick/backstage-playground"
       }
     ]
   ]

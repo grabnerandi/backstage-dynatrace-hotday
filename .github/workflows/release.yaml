@@ -35,7 +35,7 @@ jobs:
           yarn build:all
       - name: Build Image & Release
         run: |
-          docker build -f packages/backend/Dockerfile --tag grabnerandi/backstage-playground .
+          docker build -f packages/backend/Dockerfile --tag katharinasick/backstage-playground .
           npx semantic-release-plus
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
